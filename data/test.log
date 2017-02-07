@@ -14,3 +14,4 @@ COMMIT
 INSERT INTO TCITIZENS VALUES(4,'Ana','Torres Pardo','ana@example.com','1960-01-01','Av. De la Constituci\u00f3n 8','Espa\u00f1ol','09940449X','','Ana_ana')
 COMMIT
 DISCONNECT
+/*C9*/DISCONNECT
