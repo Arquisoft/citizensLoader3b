@@ -1,12 +1,13 @@
 package es.uniovi.asw;
 
-import java.util.logging.Logger;
+import java.util.List;
 
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.BusinessException;
+import es.uniovi.asw.parser.RList;
+import es.uniovi.asw.parser.ReadList;
 import es.uniovi.asw.prueba.AddCitizen;
 import es.uniovi.asw.prueba.CommandExecutor;
-import es.uniovi.asw.util.DateUtil;
 
 /**
  * Main application
@@ -25,10 +26,13 @@ public class LoadUsers {
 	void run(String... args) {
 		System.out.println("TODO");
 		CommandExecutor executor = new CommandExecutor();
-		Citizen seila = new Citizen("Seila", "Khayat Prada", "uo245392@uniovi.es", DateUtil.fromString("15/01/1996"), "c/Puerto Pontón",
-				"española","Seila_uo245392","71735747", "nopass");
+		ReadList r = new RList();
 		try {
-			executor.execute(new AddCitizen(seila));
+			List<Citizen> ciudadanos = r.read("src/test/resources/test.xlsx");
+			
+			for (Citizen c: ciudadanos)
+				executor.execute(new AddCitizen(c));
+			
 		} catch (BusinessException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

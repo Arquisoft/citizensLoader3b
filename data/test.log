@@ -1,16 +1,16 @@
-/*C5*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C6*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C7*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C8*/SET SCHEMA PUBLIC
-DISCONNECT
 /*C10*/SET SCHEMA PUBLIC
 DISCONNECT
 /*C11*/SET SCHEMA PUBLIC
-INSERT INTO TCITIZENS VALUES(1,'Seila','Khayat Prada','uo245392@uniovi.es','1996-01-15','c/Puerto Pont\u00f3n','espa\u00f1ola','71735747','nopass')
-COMMIT
 DISCONNECT
 /*C9*/SET SCHEMA PUBLIC
+alter table tcitizens add USUARIO VARCHAR(25)
+/*C12*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C13*/SET SCHEMA PUBLIC
+INSERT INTO TCITIZENS VALUES(2,'Juan','Torres Pardo','juan@example.com','1985-10-10','C/ Federico Garc\u00eda Lorca 2','Espa\u00f1ol','90500084Y','6','Juan_juan')
+COMMIT
+INSERT INTO TCITIZENS VALUES(3,'Luis','L\u00f3pez Fernando','luis@example.com','1970-03-02','C/ Real Oviedo 2','Espa\u00f1ol','19160962F','DN','Luis_luis')
+COMMIT
+INSERT INTO TCITIZENS VALUES(4,'Ana','Torres Pardo','ana@example.com','1960-01-01','Av. De la Constituci\u00f3n 8','Espa\u00f1ol','09940449X','','Ana_ana')
+COMMIT
 DISCONNECT
