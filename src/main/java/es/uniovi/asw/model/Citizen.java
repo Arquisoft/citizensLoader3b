@@ -1,128 +1,179 @@
 package es.uniovi.asw.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Citizen {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+
+@SuppressWarnings("serial")
+@Entity
+@Table(name="TCitizens")
+public class Citizen implements Serializable{
 	
-	private Long id;
-	private String name;
-	private String surname;
-	private String mail;
-	private Date date;
-	private String address;
-	private String nationality;
-	private String dni;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private long id;
+	private String nombre;
+	private String apellidos;
+	private String email;
+	@Temporal(TemporalType.DATE) private Date fechaNacimiento;
+	private String direccion;
+	private String nacionalidad;
+	@NotNull private String DNI;
 	
-	private String user;
+	private String usuario;
 	private String password;
 	
-	public Long getId() {
-		return id;
-	}
 	
-	public void setId(Long id) {
-		this.id = id;
+	public Citizen(){}
+
+
+	public Citizen(String nombre, String apellidos, String email, Date fechaNacimiento, String direccion,
+			String nacionalidad, String dNI, String usuario, String password) {
+		super();
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.email = email;
+		this.fechaNacimiento = fechaNacimiento;
+		this.direccion = direccion;
+		this.nacionalidad = nacionalidad;
+		DNI = dNI;
+		this.usuario = usuario;
+		this.password = password;
 	}
-	
-	public String getName() {
-		return name;
+
+
+	public String getNombre() {
+		return nombre;
 	}
-	
-	public void setName(String name) {
-		this.name = name;
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
-	
-	public String getSurname() {
-		return surname;
+
+
+	public String getApellidos() {
+		return apellidos;
 	}
-	
-	public void setSurname(String surname) {
-		this.surname = surname;
+
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
 	}
-	
-	public String getMail() {
-		return mail;
+
+
+	public String getEmail() {
+		return email;
 	}
-	
-	public void setMail(String mail) {
-		this.mail = mail;
+
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	
-	public Date getDate() {
-		return date;
+
+
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
 	}
-	
-	public void setDate(Date date) {
-		this.date = date;
+
+
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
-	
-	public String getDni() {
-		return dni;
+
+
+	public String getDireccion() {
+		return direccion;
 	}
-	
-	public void setDni(String dni) {
-		this.dni = dni;
+
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
 	}
-	
-	public String getUser() {
-		return user;
+
+
+	public String getNacionalidad() {
+		return nacionalidad;
 	}
-	
-	public void setUser(String user) {
-		this.user = user;
+
+
+	public void setNacionalidad(String nacionalidad) {
+		this.nacionalidad = nacionalidad;
 	}
-	
+
+
+	public String getDNI() {
+		return DNI;
+	}
+
+
+	public void setDNI(String dNI) {
+		DNI = dNI;
+	}
+
+
 	public String getPassword() {
 		return password;
 	}
-	
+
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	public String getAddress() {
-		return address;
+
+
+	public long getId() {
+		return id;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getNationality() {
-		return nationality;
-	}
-
-	public void setNationality(String nationality) {
-		this.nationality = nationality;
-	}
-
-	public Citizen(String name, String surname, String mail, Date date, String address, String nationality, 
-			String dni, String user, String password) {
-		super();
-		this.name = name;
-		this.surname = surname;
-		this.mail = mail;
-		this.date = date;
-		this.address = address;
-		this.nationality = nationality;
-		this.dni = dni;
-		this.user = user;
-		this.password = password;
-	}
-
-	public Citizen(String name, String surname, String mail, Date date, String address, String nationality,
-			String dni) {
-		super();
-		this.name = name;
-		this.surname = surname;
-		this.mail = mail;
-		this.date = date;
-		this.address = address;
-		this.nationality = nationality;
-		this.dni = dni;
-	}
 	
-	
-	
+	public String getUsuario() {
+		return usuario;
+	}
+
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((DNI == null) ? 0 : DNI.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Citizen other = (Citizen) obj;
+		if (DNI == null) {
+			if (other.DNI != null)
+				return false;
+		} else if (!DNI.equals(other.DNI))
+			return false;
+		return true;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Citizen [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", email=" + email
+				+ ", fechaNacimiento=" + fechaNacimiento + ", direccion=" + direccion + ", nacionalidad=" + nacionalidad
+				+ ", DNI=" + DNI + ", password=" + password + "]";
+	}
 }

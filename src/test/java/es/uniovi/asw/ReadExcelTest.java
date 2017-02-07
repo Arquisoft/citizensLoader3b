@@ -19,13 +19,13 @@ public class ReadExcelTest {
 		
 		Citizen c = citiziens.get(0);
 		
-		assertEquals(c.getName(), "Juan");
-		assertEquals(c.getSurname(), "Torres Pardo");
-		assertEquals(c.getMail(), "juan@example.com");
-		assertEquals(c.getAddress(), "C/ Federico García Lorca 2");
-		assertEquals(c.getNationality(), "Español");
-		assertEquals(c.getDni(), "90500084Y");
-		assertEquals(c.getUser(), "Juan_juan");
+		assertEquals(c.getNombre(), "Juan");
+		assertEquals(c.getApellidos(), "Torres Pardo");
+		assertEquals(c.getEmail(), "juan@example.com");
+		assertEquals(c.getDireccion(), "C/ Federico García Lorca 2");
+		assertEquals(c.getNacionalidad(), "Español");
+		assertEquals(c.getDNI(), "90500084Y");
+		assertEquals(c.getUsuario(), "Juan_juan");
 	}
 
 }
