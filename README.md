@@ -9,8 +9,8 @@
 
 # Authors
 
-*Herminio García González (@herminiogg)
-*Jose Emilio Labra Gayo (@labra)
-*Moisés Muñiz Mangas (@UO237351)
-*Eduardo Martínez Chillón (@Unioviedu)
-*Seila Khayat Prada (@SeilaPr)
+* Herminio García González (@herminiogg)
+* Jose Emilio Labra Gayo (@labra)
+* Moisés Muñiz Mangas (@UO237351)
+* Eduardo Martínez Chillón (@Unioviedu)
+* Seila Khayat Prada (@SeilaPr)
