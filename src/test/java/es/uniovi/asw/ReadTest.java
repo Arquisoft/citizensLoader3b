@@ -10,7 +10,7 @@ import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.parser.RList;
 import es.uniovi.asw.parser.ReadList;
 
-public class ReadExcelTest {
+public class ReadTest {
 	
 	@Test
 	public void readExcelCorrect() throws Exception {
@@ -26,6 +26,21 @@ public class ReadExcelTest {
 		assertEquals(c.getNacionalidad(), "Español");
 		assertEquals(c.getDNI(), "90500084Y");
 		assertEquals(c.getUsuario(), "Juan_juan");
+	}
+	
+	@Test
+	public void readTextPlainCorrect() throws Exception {
+		ReadList rl = new RList();
+		List<Citizen> citiziens = rl.read("src/test/resources/test.txt");
+		
+		Citizen c = citiziens.get(0);
+		
+		assertEquals(c.getNombre(), "Eduardo");
+		assertEquals(c.getApellidos(), "Martinez Chillon");
+		assertEquals(c.getEmail(), "ele_du@hotmail.es");
+		assertEquals(c.getNacionalidad(), "Español");
+		assertEquals(c.getDNI(), "71751099T");
+		assertEquals(c.getUsuario(), "Eduardo_ele_du");
 	}
 
 }

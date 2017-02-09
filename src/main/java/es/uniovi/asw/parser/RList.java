@@ -4,6 +4,7 @@ import java.util.List;
 
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.parser.reader.ReaderExcel;
+import es.uniovi.asw.parser.reader.ReaderTextPlain;
 import es.uniovi.asw.util.Console;
 
 public class RList implements ReadList {
@@ -16,6 +17,8 @@ public class RList implements ReadList {
 		
 		if (extension.equals("xlsx"))
 			reader = new ReaderExcel();
+		else if (extension.equals("txt"))
+			reader = new ReaderTextPlain();
 		else
 			Console.print("El fichero no tiene un formato correcto");
 		

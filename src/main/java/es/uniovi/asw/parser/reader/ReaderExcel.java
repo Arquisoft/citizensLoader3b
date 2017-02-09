@@ -10,16 +10,18 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.parser.Reader;
 import es.uniovi.asw.util.Checker;
+import es.uniovi.asw.util.Console;
 import es.uniovi.asw.util.Generator;
 
 public class ReaderExcel extends Reader {
-	XSSFWorkbook wb;
-	XSSFSheet sheet;
-	Row row = null;
-	Iterator<Row> iteratorRow;
+	private Row row = null;
 	
 	@Override
 	public void execute() {
+		XSSFWorkbook wb;
+		XSSFSheet sheet;
+		Iterator<Row> iteratorRow;
+		
 		try {
 			wb = new XSSFWorkbook(new File(path));
 			sheet = wb.getSheetAt(0);
@@ -43,7 +45,7 @@ public class ReaderExcel extends Reader {
 						nationality, dni, username, password));
 			}
 		} catch (Exception e) {
-			
+			Console.print(e.getMessage());
 		}
 	}
 	
