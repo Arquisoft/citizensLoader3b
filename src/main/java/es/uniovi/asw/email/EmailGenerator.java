@@ -2,6 +2,7 @@ package es.uniovi.asw.email;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -16,21 +17,25 @@ import es.uniovi.asw.model.Citizen;
 
 public class EmailGenerator {
 	
-	public static void main(String... args) {
-	}
+	
 	/**
-	 * Metodo para generar un fichero en word que indique al usuario la contraseña y nombre de usuario que se le ha asignado
+	 * Metodo para generar un fichero en formato pdf/word segun se indique en la llamada que indique al usuario la contraseña y nombre de usuario que se le ha asignado
+	 * @param formato "word" / "pdf" según de desee un formato u otro.
 	 * @param usuario, ciudadano para el que se genera dicho documento
-	 * @return documento creado con las especificaciones del usuario
+	 * @return documento creado con las especificaciones del usuario / null si no se ha podido crear el formato
 	 */
-	public XWPFDocument generateWord(Citizen usuario){
+	public File generate(String formato,Citizen usuario){
+			if(!(formato.toLowerCase().equals("pdf") || formato.toLowerCase().equals("word"))){
+				System.err.println("El formato elegido para crear el documento no existe.");
+				return null;
+				
+			}
+			
 		      //Generamos un documento vacío
+		      @SuppressWarnings("resource")
 		      XWPFDocument document= new XWPFDocument(); 
 		      //Guardamos el documento para poder hacer pruebas más adelante
-		      FileOutputStream out;
 		      try {
-		    	  out = new FileOutputStream( new File("createdocument.docx"));
-					
 					//Creamos un primer parrafo que hará de título y lo asignamos al run.
 					XWPFParagraph paragraph = document.createParagraph();
 					XWPFRun run=paragraph.createRun();
@@ -60,16 +65,41 @@ public class EmailGenerator {
 					paragraph.setBorderTop(Borders.BASIC_BLACK_DASHES);
 					run=paragraph.createRun();
 					run.setText("Usuario: "+usuario.getUsuario()+" -------------- "+
-					"Contraseña: "+usuario.getPassword());
-					document.write(out);
+					"Contraseña: "+usuario.getPassword()); //Acordarse de traducir cuando esten las contraseñas cifradas!
 					
-					out.close();
-					System.out.println("createdocument.docx written successully");
+;
+					System.out.println("createdocument "+formato+" written successully");
 		      } catch (IOException e) {
 		    	  e.printStackTrace();
-		    	  System.err.println("Error I/O en la generación del documento word para el usuario "+usuario.getDNI());
+		    	  System.err.println("Error I/O en la generación del documento para el usuario "+usuario.getDNI());
 		      }
-		      return document; 
+		      if(formato.toLowerCase().equals("word")){
+		    	    try {
+		    	    	File send=new File("createdocument."+"docx");
+		    	    	FileOutputStream out= new FileOutputStream( send);
+						document.write(out);
+						out.close();
+						return send;
+					} catch (IOException e) {
+						e.printStackTrace();
+				    	  System.err.println("Error I/O en la generación del documento word para el usuario "+usuario.getDNI());
+					}
+				}
+			  if(formato.toLowerCase().equals("pdf")){
+					try {
+						File send=new File("createdocument."+"pdf");
+						FileOutputStream out= new FileOutputStream(send );
+						document.write(out);
+						out.close();
+						return send;
+					} catch (IOException e) {
+						e.printStackTrace();
+				    	  System.err.println("Error I/O en la escritura del documento pdf para el usuario "+usuario.getDNI());
+					}
+			  }
+			  return null;
 	}
+
+	
 	
 }
