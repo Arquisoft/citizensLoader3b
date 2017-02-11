@@ -9,6 +9,7 @@ import org.junit.Test;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.parser.RList;
 import es.uniovi.asw.parser.ReadList;
+import es.uniovi.asw.util.Console;
 
 public class ReadTest {
 	
@@ -41,6 +42,18 @@ public class ReadTest {
 		assertEquals(c.getNacionalidad(), "Español");
 		assertEquals(c.getDNI(), "71751099T");
 		assertEquals(c.getUsuario(), "Eduardo_ele_du");
+	}
+	
+	@Test
+	public void readEmailInCorrect() throws Exception {
+		ReadList rl = new RList();
+		List<Citizen> citiziens = rl.read("src/test/resources/testEmailIncorrect.txt");
+		
+		assertEquals(0, citiziens.size());
+		
+		citiziens = rl.read("src/test/resources/testEmailIncorrect.xlsx");
+		
+		assertEquals(0, citiziens.size());
 	}
 
 }
