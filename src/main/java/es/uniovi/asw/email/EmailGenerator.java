@@ -2,7 +2,6 @@ package es.uniovi.asw.email;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -66,14 +65,12 @@ public class EmailGenerator {
 					run=paragraph.createRun();
 					run.setText("Usuario: "+usuario.getUsuario()+" -------------- "+
 					"Contraseña: "+usuario.getPassword()); //Acordarse de traducir cuando esten las contraseñas cifradas!
-					
-;
 					System.out.println("createdocument "+formato+" written successully");
 		      } catch (IOException e) {
 		    	  e.printStackTrace();
 		    	  System.err.println("Error I/O en la generación del documento para el usuario "+usuario.getDNI());
 		      }
-		      if(formato.toLowerCase().equals("word")){
+		      if(formato.equalsIgnoreCase("word")){
 		    	    try {
 		    	    	File send=new File("createdocument."+"docx");
 		    	    	FileOutputStream out= new FileOutputStream( send);
@@ -85,7 +82,7 @@ public class EmailGenerator {
 				    	  System.err.println("Error I/O en la generación del documento word para el usuario "+usuario.getDNI());
 					}
 				}
-			  if(formato.toLowerCase().equals("pdf")){
+			  if(formato.equalsIgnoreCase("pdf")){
 					try {
 						File send=new File("createdocument."+"pdf");
 						FileOutputStream out= new FileOutputStream(send );
