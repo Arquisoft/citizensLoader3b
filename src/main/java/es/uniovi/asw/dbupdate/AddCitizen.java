@@ -1,4 +1,4 @@
-package es.uniovi.asw.prueba;
+package es.uniovi.asw.dbupdate;
 
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.BusinessException;

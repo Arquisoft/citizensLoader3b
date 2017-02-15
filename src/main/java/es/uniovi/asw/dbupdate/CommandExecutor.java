@@ -1,4 +1,4 @@
-package es.uniovi.asw.prueba;
+package es.uniovi.asw.dbupdate;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
