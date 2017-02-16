@@ -72,7 +72,7 @@ public class EmailGenerator {
 					run=paragraph.createRun();
 					run.setText("Usuario: "+usuario.getUsuario()+" -------------- "+
 					"Contraseña: "+usuario.getPassword()); //Acordarse de traducir cuando esten las contraseñas cifradas!
-					System.out.println("createdocument "+formato+" written successully");
+					//System.out.println("createdocument "+formato+" written successully");
 		      } catch (IOException e) {
 		    	  e.printStackTrace();
 		    	  System.err.println("Error I/O en la generación del documento para el usuario "+usuario.getDNI());
@@ -83,6 +83,7 @@ public class EmailGenerator {
 						out = new FileOutputStream(sendword);
 						document.write(out);
 						out.close();	
+						document.close();
 					} catch (IOException e) {
 						e.printStackTrace();
 						System.err.println("Error IO al genetat el docx");
@@ -122,9 +123,11 @@ public class EmailGenerator {
 	    	
 	    	PdfConverter.getInstance().convert(document, outp, options);
 	    	
+	    	document.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		outp.close();
 		return pdf;
 	}
 
