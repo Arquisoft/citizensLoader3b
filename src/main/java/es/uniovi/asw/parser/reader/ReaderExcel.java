@@ -7,11 +7,11 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import es.uniovi.asw.logger.Log;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.BusinessException;
 import es.uniovi.asw.parser.Reader;
 import es.uniovi.asw.util.Checker;
-import es.uniovi.asw.util.Console;
 import es.uniovi.asw.util.Generator;
 
 public class ReaderExcel extends Reader {
@@ -42,13 +42,15 @@ public class ReaderExcel extends Reader {
 				username = Generator.username(name, mail);
 				password = Generator.password(10);
 				
-				citiziens.add(new Citizen(name, surname, mail, date, address, 
-						nationality, dni, username, password));
+				Citizen citizien = new Citizen(name, surname, mail, date, address, 
+						nationality, dni, username, password);
+				citiziens.add(citizien);
 				
+				Log.getInstance().info("Los datos para el ciudadano "+citizien.toString()+" han sido introducidos correctamente");
 				fila++;
 			}
 		} catch (BusinessException e) {
-			Console.print(e.getMessage());
+			Log.getInstance().warning(e.getMessage());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

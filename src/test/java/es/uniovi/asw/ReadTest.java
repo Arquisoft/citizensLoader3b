@@ -9,7 +9,6 @@ import org.junit.Test;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.parser.RList;
 import es.uniovi.asw.parser.ReadList;
-import es.uniovi.asw.util.Console;
 
 public class ReadTest {
 	

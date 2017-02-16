@@ -2,6 +2,7 @@ package es.uniovi.asw.util;
 
 import java.util.Date;
 
+import es.uniovi.asw.logger.Log;
 import es.uniovi.asw.model.exception.BusinessException;
 
 public class Checker {
@@ -93,7 +94,8 @@ public class Checker {
 	}
 	
 	private static void error(String dato, String message, int fila, int columna, String fichero) throws BusinessException {
-		throw new BusinessException("Datos incorrectos ---> "
-				+"El "+dato+" "+message+" [fila:"+fila+" columna:"+columna+" de "+fichero);
+		String mess = "Datos incorrectos ---> "
+				+"El "+dato+" "+message+" [fila:"+fila+" columna:"+columna+"] de "+fichero;
+		throw new BusinessException(mess);
 	}
 }
