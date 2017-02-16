@@ -40,7 +40,7 @@ public class ReaderExcel extends Reader {
 				dni = Checker.dni(getInfo(6),fila,7,path);
 				
 				username = Generator.username(name, mail);
-				password = Generator.password(10);
+				password = Generator.password(10,fila*1000);
 				
 				Citizen citizien = new Citizen(name, surname, mail, date, address, 
 						nationality, dni, username, password);

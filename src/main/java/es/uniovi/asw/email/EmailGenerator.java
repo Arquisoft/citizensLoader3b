@@ -2,20 +2,28 @@ package es.uniovi.asw.email;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.util.Units;
+import org.apache.poi.xwpf.converter.pdf.PdfConverter;
+import org.apache.poi.xwpf.converter.pdf.PdfOptions;
 import org.apache.poi.xwpf.usermodel.Borders;
 import org.apache.poi.xwpf.usermodel.Document;
 import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
+
+
 import es.uniovi.asw.model.Citizen;
 
 public class EmailGenerator {
 	
+
 	
 	/**
 	 * Metodo para generar un fichero en formato pdf/word segun se indique en la llamada que indique al usuario la contraseña y nombre de usuario que se le ha asignado
@@ -27,14 +35,13 @@ public class EmailGenerator {
 			if(!(formato.toLowerCase().equals("pdf") || formato.toLowerCase().equals("word"))){
 				System.err.println("El formato elegido para crear el documento no existe.");
 				return null;
-				
 			}
-			
 		      //Generamos un documento vacío
-		      @SuppressWarnings("resource")
 		      XWPFDocument document= new XWPFDocument(); 
 		      //Guardamos el documento para poder hacer pruebas más adelante
 		      try {
+		    	  //Le asignamos un template para evitarnos los problemas de conversión a pdf más adelante
+		    	    document = new XWPFDocument(new FileInputStream("template.docx"));
 					//Creamos un primer parrafo que hará de título y lo asignamos al run.
 					XWPFParagraph paragraph = document.createParagraph();
 					XWPFRun run=paragraph.createRun();
@@ -70,31 +77,55 @@ public class EmailGenerator {
 		    	  e.printStackTrace();
 		    	  System.err.println("Error I/O en la generación del documento para el usuario "+usuario.getDNI());
 		      }
-		      if(formato.equalsIgnoreCase("word")){
-		    	    try {
-		    	    	File send=new File("createdocument."+"docx");
-		    	    	FileOutputStream out= new FileOutputStream( send);
-						document.write(out);
-						out.close();
-						return send;
-					} catch (IOException e) {
-						e.printStackTrace();
-				    	  System.err.println("Error I/O en la generación del documento word para el usuario "+usuario.getDNI());
-					}
-				}
-			  if(formato.equalsIgnoreCase("pdf")){
+	    	    	File sendword=new File("createdocument."+"docx");
+	    	    	FileOutputStream out;
 					try {
-						File send=new File("createdocument."+"pdf");
-						FileOutputStream out= new FileOutputStream(send );
+						out = new FileOutputStream(sendword);
 						document.write(out);
-						out.close();
-						return send;
+						out.close();	
 					} catch (IOException e) {
 						e.printStackTrace();
-				    	  System.err.println("Error I/O en la escritura del documento pdf para el usuario "+usuario.getDNI());
+						System.err.println("Error IO al genetat el docx");
 					}
+					
+					
+		      if(formato.equalsIgnoreCase("word")){
+		    	  return sendword;
+				}
+		      else if(formato.equalsIgnoreCase("pdf")){
+						try {
+							return crearPdf(sendword);
+						} catch (IOException e) {
+							e.printStackTrace();
+							System.err.println("Error IO al genetat el pdf");
+						}
 			  }
 			  return null;
+	}
+	
+	
+	/**
+	 * Metodo para pasar docx a pdf por medio del PdfConverter de POI
+	 * @param docx de referencia para crear el pdf
+	 * @return file en formato pdf creado
+	 * @throws IOException
+	 */
+	public static File crearPdf(File docx) throws IOException{
+		FileInputStream filew;
+		File pdf=new File("HelloWord.pdf");
+		OutputStream outp = new FileOutputStream(pdf);
+		try {
+			filew = new FileInputStream(docx);
+			XWPFDocument document = new XWPFDocument(filew);
+			document.createStyles();
+			PdfOptions options = PdfOptions.create();
+	    	
+	    	PdfConverter.getInstance().convert(document, outp, options);
+	    	
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return pdf;
 	}
 
 	

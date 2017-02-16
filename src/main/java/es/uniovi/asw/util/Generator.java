@@ -4,10 +4,10 @@ import java.util.Random;
 
 public class Generator {
 	
-	public static String password(int length) {
+	public static String password(int length,int fila) {
 		String pass = "";
-		long tmp = new java.util.GregorianCalendar().getTimeInMillis();
-		Random r = new Random(tmp);
+		//long tmp = new java.util.GregorianCalendar().getTimeInMillis();
+		Random r = new Random(fila);
 		
 		while(pass.length()<length) {
 			char c = (char) r.nextInt(255);
