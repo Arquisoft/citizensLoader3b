@@ -3,12 +3,10 @@ package es.uniovi.asw.parser.reader;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-import es.uniovi.asw.logger.Log;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.BusinessException;
 import es.uniovi.asw.parser.Reader;
 import es.uniovi.asw.util.Checker;
-import es.uniovi.asw.util.Console;
 import es.uniovi.asw.util.Generator;
 
 public class ReaderTextPlain extends Reader{
@@ -46,7 +44,7 @@ public class ReaderTextPlain extends Reader{
 				fila++;
         	}
         } catch (BusinessException e) {
-        	Log.getInstance().warning(e.getMessage());
+        	System.out.println(e.getMessage());
         } catch (Exception e) {
         	e.printStackTrace();
         }

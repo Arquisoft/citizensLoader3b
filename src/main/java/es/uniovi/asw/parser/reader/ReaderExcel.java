@@ -7,11 +7,12 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import es.uniovi.asw.logger.Log;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.BusinessException;
 import es.uniovi.asw.parser.Reader;
+import es.uniovi.asw.reportwriter.SingletonReporter;
 import es.uniovi.asw.util.Checker;
+import es.uniovi.asw.util.Console;
 import es.uniovi.asw.util.Generator;
 
 public class ReaderExcel extends Reader {
@@ -30,6 +31,8 @@ public class ReaderExcel extends Reader {
 			iteratorRow.next(); //nos saltamos los titulos
 			int fila = 1;
 			while (iteratorRow.hasNext()) {
+				
+				try {
 				row = iteratorRow.next();
 				name = Checker.name(getInfo(0),fila,1,path);
 				surname = Checker.surname(getInfo(1),fila,2,path);
@@ -46,11 +49,15 @@ public class ReaderExcel extends Reader {
 						nationality, dni, username, password);
 				citiziens.add(citizien);
 				
-				Log.getInstance().info("Los datos para el ciudadano "+citizien.toString()+" han sido introducidos correctamente");
+				Console.println("Se ha añadido a la base de datos a "+citizien.toString());
+				
+				} catch (BusinessException e) {
+					SingletonReporter.getWreportP().report(e.getMessage());
+					Console.println("ERROR al cargar uno de los ciudadano del fichero (informacion en Log.log)");
+				}
+				
 				fila++;
 			}
-		} catch (BusinessException e) {
-			Log.getInstance().warning(e.getMessage());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

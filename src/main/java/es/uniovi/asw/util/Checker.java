@@ -2,7 +2,6 @@ package es.uniovi.asw.util;
 
 import java.util.Date;
 
-import es.uniovi.asw.logger.Log;
 import es.uniovi.asw.model.exception.BusinessException;
 
 public class Checker {

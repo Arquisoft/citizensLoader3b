@@ -14,6 +14,7 @@ public class RList implements ReadList {
 	@Override
 	public List<Citizen> read(String path) {
 		String extension = path.split("\\.")[1];
+		List<Citizen> citizens;
 		
 		if (extension.equals("xlsx"))
 			reader = new ReaderExcel();
@@ -22,7 +23,9 @@ public class RList implements ReadList {
 		else
 			Console.print("El fichero no tiene un formato correcto");
 		
-		return reader.readFile(path);
+		citizens = reader.readFile(path);
+		new InsertR().insert(citizens);
+		return citizens;
 	}
 
 }
