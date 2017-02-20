@@ -44,7 +44,7 @@ public class ReadTest {
 	}
 	
 	@Test
-	public void readEmailInCorrect() throws Exception {
+	public void readEmailInCorrect() throws Exception { //Algo aquí ha de estar mal
 		ReadList rl = new RList();
 		List<Citizen> citiziens = rl.read("src/test/resources/testEmailIncorrect.txt");
 		
@@ -52,7 +52,7 @@ public class ReadTest {
 		
 		citiziens = rl.read("src/test/resources/testEmailIncorrect.xlsx");
 		
-		assertEquals(2, citiziens.size()+1);
+		assertEquals(2, citiziens.size());
 	}
 
 }
