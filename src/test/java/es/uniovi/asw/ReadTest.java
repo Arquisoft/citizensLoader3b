@@ -48,11 +48,11 @@ public class ReadTest {
 		ReadList rl = new RList();
 		List<Citizen> citiziens = rl.read("src/test/resources/testEmailIncorrect.txt");
 		
-		assertEquals(0, citiziens.size());
+		assertEquals(2, citiziens.size()+1);
 		
 		citiziens = rl.read("src/test/resources/testEmailIncorrect.xlsx");
 		
-		assertEquals(0, citiziens.size());
+		assertEquals(2, citiziens.size()+1);
 	}
 
 }
