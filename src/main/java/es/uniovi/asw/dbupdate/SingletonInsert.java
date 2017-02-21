@@ -1,10 +1,10 @@
-package es.uniovi.asw.parser;
+package es.uniovi.asw.dbupdate;
 
-import es.uniovi.asw.dbupdate.Insert;
+import es.uniovi.asw.parser.InsertR;
 
 public class SingletonInsert {
 	private static SingletonInsert instance = new SingletonInsert();
-	private static Insert reporter = new InsertR();
+	private static Insert insert = new InsertR();
 	
 	private SingletonInsert() {}
 	
@@ -13,6 +13,6 @@ public class SingletonInsert {
 	}
 	
 	public static Insert getInsert() {
-		return reporter;
+		return insert;
 	}
 }

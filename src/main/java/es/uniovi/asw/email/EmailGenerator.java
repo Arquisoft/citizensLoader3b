@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.List;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.util.Units;
@@ -18,15 +19,18 @@ import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 
-
 import es.uniovi.asw.model.Citizen;
 
 public class EmailGenerator {
 	
-
+	public void generate(String formato, List<Citizen> citizens) {
+		for (Citizen c: citizens)
+			generate(formato, c);
+	}
+	
 	/**
 	 * Metodo para generar un fichero en formato pdf/word segun se indique en la llamada que indique al usuario la contraseña y nombre de usuario que se le ha asignado
-	 * @param formato "word" / "pdf" según de desee un formato u otro.
+	 * @param formato "word" / "pdf" según se desee un formato u otro.
 	 * @param usuario, ciudadano para el que se genera dicho documento
 	 * @return documento creado con las especificaciones del usuario / null si no se ha podido crear el formato
 	 */
