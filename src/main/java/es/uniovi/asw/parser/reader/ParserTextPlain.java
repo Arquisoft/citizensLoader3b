@@ -8,13 +8,13 @@ import java.util.Date;
 
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.BusinessException;
-import es.uniovi.asw.parser.Reader;
+import es.uniovi.asw.parser.Parser;
 import es.uniovi.asw.parser.WreportR;
 import es.uniovi.asw.util.Checker;
 import es.uniovi.asw.util.Console;
 import es.uniovi.asw.util.Generator;
 
-public class ReaderTextPlain extends Reader{
+public class ParserTextPlain extends Parser{
 
 	@Override
 	public void execute() {

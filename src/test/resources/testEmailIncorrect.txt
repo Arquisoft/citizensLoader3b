@@ -1,3 +1,4 @@
 Nombre;Apellidos;Correo electronico;Fecha nacimiento;Direccion postal;Nacionalidad;DNI
 Eduardo;Martinez Chillon;ele_duhotmail.es;7/10/1996;C/ Argañosa,39,4ªd;Español;71751099T
 Cristiano;Ronaldo Silva;cr7@gmail.com;6/3/1990;C/ Madeira,40,5ªF;Portugues;71750990Y
+Cristiano;Martinez Silva;cr9@gmail.com;6/3/1990;C/ Madeira,40,5ªF;Portugues;78050770Y

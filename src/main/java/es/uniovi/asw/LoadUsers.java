@@ -1,5 +1,7 @@
 package es.uniovi.asw;
 
+import java.util.List;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -8,6 +10,8 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.UnrecognizedOptionException;
 
+import es.uniovi.asw.email.EmailGenerator;
+import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.parser.RList;
 import es.uniovi.asw.parser.ReadList;
 import es.uniovi.asw.reportwriter.Log;
@@ -24,7 +28,7 @@ public class LoadUsers {
 	public static void main(String... args) {
 		final LoadUsers runner = new LoadUsers();
 		Log.config();
-		runner.run(new String[]{"-r", "src/test/resources/"+args[0]});
+		runner.run(args);
 	}
 
 	private void run(String... args) {
@@ -51,17 +55,22 @@ public class LoadUsers {
 				Console.println("--- Cargando los datos del archivo ---");
 				
 				ReadList reader = new RList();
-				String ruta = args[1];
-				reader.read(ruta);
+				String ruta = "src/test/resources/"+args[args.length-1];
+				List<Citizen> citizens = reader.read(ruta);
 				
 				if(line.hasOption("w")){
-					if(line.getOptionValue("w").toLowerCase().equals("pdf")){
-						//leer excel y generar cartas pdf
-					}
-					else{
-						//un if con el resto de formatos y en el excel el formato por defecto si no se especifica uno
-					}
+					
+					if(line.getOptionValue("w").toLowerCase().equals("pdf"))
+						new EmailGenerator().generate("pdf", citizens);
+					
+					else if (line.getOptionValue("w").toLowerCase().equals("word"))
+						new EmailGenerator().generate("word", citizens);
+					
+					else 
+						System.out.println("No soportamos ese formato para las cartas");
+							
 				}
+				
 			}
 			
 			else if(line.getOptions().length == 0){
