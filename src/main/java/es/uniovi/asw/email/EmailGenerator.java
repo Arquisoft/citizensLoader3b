@@ -30,7 +30,7 @@ public class EmailGenerator {
 	 * @param usuario, ciudadano para el que se genera dicho documento
 	 * @return documento creado con las especificaciones del usuario / null si no se ha podido crear el formato
 	 */
-	public File generate(String formato,Citizen usuario){
+	public static File generate(String formato,Citizen usuario){
 			if(!(formato.toLowerCase().equals("pdf") || formato.toLowerCase().equals("word"))){
 				System.err.println("El formato elegido para crear el documento no existe.");
 				return null;
