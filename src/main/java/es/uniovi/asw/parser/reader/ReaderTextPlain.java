@@ -9,7 +9,7 @@ import java.util.Date;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.BusinessException;
 import es.uniovi.asw.parser.Reader;
-import es.uniovi.asw.reportwriter.SingletonReporter;
+import es.uniovi.asw.parser.WreportR;
 import es.uniovi.asw.util.Checker;
 import es.uniovi.asw.util.Console;
 import es.uniovi.asw.util.Generator;
@@ -53,7 +53,7 @@ public class ReaderTextPlain extends Reader{
 					Console.println("Se ha leido de archivo de texto a "+c.toString());
 				
         		} catch (BusinessException e) {
-        			SingletonReporter.getWreportP().report(e.getMessage());
+        			new WreportR().report(e.getMessage());
         			Console.println("ERROR al cargar uno de los ciudadano del fichero (informacion en Log.log)");
         		}
         		siguiente = b.readLine();
