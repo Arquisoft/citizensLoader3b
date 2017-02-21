@@ -4,7 +4,7 @@ import es.uniovi.asw.parser.InsertR;
 
 public class SingletonInsert {
 	private static SingletonInsert instance = new SingletonInsert();
-	private static Insert insert = new InsertR();
+	private static Insert insert = new InsertP();
 	
 	private SingletonInsert() {}
 	
