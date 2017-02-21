@@ -24,7 +24,7 @@ public class LoadUsers {
 	public static void main(String... args) {
 		final LoadUsers runner = new LoadUsers();
 		Log.config();
-		runner.run(new String[]{"-r", "src/test/resources/"+args[0]});
+		runner.run(new String[]{"-r", "src/test/resources/test.xlsx"});
 	}
 
 	private void run(String... args) {

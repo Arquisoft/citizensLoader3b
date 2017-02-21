@@ -172,7 +172,7 @@ public class Citizen implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Citizen [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", email=" + email
+		return "Citizen [nombre=" + nombre + ", apellidos=" + apellidos + ", email=" + email
 				+ ", fechaNacimiento=" + fechaNacimiento + ", direccion=" + direccion + ", nacionalidad=" + nacionalidad
 				+ ", DNI=" + DNI + ", password=" + password + "]";
 	}

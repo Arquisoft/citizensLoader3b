@@ -2,3 +2,27 @@
 20/02/2017 07:07:03.363 - [WARNING] - Datos incorrectos ---> El mail juanexample.com debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testEmailIncorrect.xlsx
 20/02/2017 07:08:41.422 - [WARNING] - Datos incorrectos ---> El mail juanexample.com debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testEmailIncorrect.xlsx
 20/02/2017 07:19:43.628 - [WARNING] - Datos incorrectos ---> El mail ele_duhotmail.es debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testEmailIncorrect.txt
+21/02/2017 05:29:18.803 - [WARNING] - null
+21/02/2017 05:30:55.304 - [WARNING] - null
+21/02/2017 05:31:07.885 - [WARNING] - null
+21/02/2017 05:34:27.130 - [WARNING] - Datos incorrectos ---> El mail juanexample.com debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testEmailIncorrect.xlsx
+21/02/2017 05:39:51.591 - [WARNING] - Datos incorrectos ---> El mail juanexample.com debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testEmailIncorrect.xlsx
+21/02/2017 05:40:47.553 - [WARNING] - Datos incorrectos ---> El mail juanexample.com debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testEmailIncorrect.xlsx
+21/02/2017 06:12:32.938 - [WARNING] - null
+21/02/2017 06:12:32.939 - [WARNING] - null
+21/02/2017 06:12:32.940 - [WARNING] - null
+21/02/2017 06:23:16.700 - [WARNING] - El usuario con DNI 90500084Yya se encontraba en la base de datos.
+21/02/2017 06:23:16.704 - [WARNING] - El usuario con DNI 19160962Fya se encontraba en la base de datos.
+21/02/2017 06:23:16.706 - [WARNING] - El usuario con DNI 09940449Xya se encontraba en la base de datos.
+21/02/2017 06:24:17.912 - [WARNING] - El usuario con DNI 90500084Yya se encontraba en la base de datos.
+21/02/2017 06:24:17.914 - [WARNING] - El usuario con DNI 19160962Fya se encontraba en la base de datos.
+21/02/2017 06:24:17.914 - [WARNING] - El usuario con DNI 09940449Xya se encontraba en la base de datos.
+21/02/2017 06:24:38.990 - [WARNING] - El usuario con DNI 90500084Yya se encontraba en la base de datos.
+21/02/2017 06:24:38.992 - [WARNING] - El usuario con DNI 19160962Fya se encontraba en la base de datos.
+21/02/2017 06:24:38.993 - [WARNING] - El usuario con DNI 09940449Xya se encontraba en la base de datos.
+21/02/2017 06:25:01.361 - [WARNING] - El usuario con DNI 90500084Yya se encontraba en la base de datos.
+21/02/2017 06:25:01.364 - [WARNING] - El usuario con DNI 19160962Fya se encontraba en la base de datos.
+21/02/2017 06:25:01.365 - [WARNING] - El usuario con DNI 09940449Xya se encontraba en la base de datos.
+21/02/2017 06:27:20.437 - [WARNING] - El usuario con DNI 90500084Y ya se encontraba en la base de datos.
+21/02/2017 06:27:20.440 - [WARNING] - El usuario con DNI 19160962F ya se encontraba en la base de datos.
+21/02/2017 06:27:20.441 - [WARNING] - El usuario con DNI 09940449X ya se encontraba en la base de datos.
