@@ -50,7 +50,7 @@ public class ReaderTextPlain extends Reader{
 					
 					citiziens.add(c);
 					
-					Console.println("Se ha añadido a la base de datos a "+c.toString());
+					Console.println("Se ha leido de archivo de texto a "+c.toString());
 				
         		} catch (BusinessException e) {
         			SingletonReporter.getWreportP().report(e.getMessage());

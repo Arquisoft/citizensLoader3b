@@ -6,7 +6,7 @@ import es.uniovi.asw.model.exception.BusinessException;
 
 public class Checker {
 	
-	public static String name(String name,int row,int column,String fichero) throws Exception {
+	public static String name(String name,int row,int column,String fichero) throws BusinessException {
 		String dato = "nombre";
 		if (isNull(name))
 			error(dato,name+" no puede ser un dato nulo",row,column,fichero);
