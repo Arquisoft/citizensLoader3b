@@ -1,5 +1,6 @@
 package es.uniovi.asw.parser;
 
+import es.uniovi.asw.dbupdate.Insert;
 
 public class SingletonInsert {
 	private static SingletonInsert instance = new SingletonInsert();
