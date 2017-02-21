@@ -25,7 +25,7 @@ public class EmailGenerator {
 	
 	public void generate(String formato, List<Citizen> citizens) {
 		for (Citizen c: citizens)
-			generate(formato, c);
+			generateF(formato, c);
 	}
 	
 	/**
@@ -34,7 +34,7 @@ public class EmailGenerator {
 	 * @param usuario, ciudadano para el que se genera dicho documento
 	 * @return documento creado con las especificaciones del usuario / null si no se ha podido crear el formato
 	 */
-	public static File generate(String formato,Citizen usuario){
+	public static File generateF(String formato,Citizen usuario){
 			if(usuario==null || usuario.getNombre()==null || usuario.getApellidos()==null 
 					|| usuario.getDNI()==null || usuario.getEmail()==null){
 				System.err.println("El usuario es null o alguno de los parametros necesarios para realizar esta accion lo es. ");

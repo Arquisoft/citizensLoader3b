@@ -5,7 +5,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Date;
 
-import javax.validation.constraints.AssertTrue;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -15,7 +15,7 @@ public class CheckerTest {
 
 	
 	@Test
-	public void CheckearTodoCorrecto() throws Exception {
+	public void checkearTodoCorrecto() throws Exception {
 		assertEquals(Checker.name("Pepe", 1, 1, "1"),"Pepe");
 		Date d=new Date();
 		assertEquals(Checker.date(d, 1, 1,"1"),d);
@@ -27,43 +27,43 @@ public class CheckerTest {
 	}
 	
 	@Test(expected = BusinessException.class) 
-	public void NameNull() throws BusinessException{
+	public void nameNull() throws BusinessException{
 		Checker.name(null, 1, 1, "1");
 	}
 	@Test(expected = BusinessException.class) 
-	public void DateNull() throws Exception{
+	public void dateNull() throws Exception{
 		Checker.date(null, 1, 1,"1");
 	}
 	@Test(expected = BusinessException.class) 
-	public void AddressNull() throws Exception{
+	public void addressNull() throws Exception{
 		Checker.address(null, 1, 1,"1");
 	}
 	@Test(expected = BusinessException.class) 
-	public void DniNull() throws Exception{
+	public void dniNull() throws Exception{
 		Checker.dni(null, 1, 1,"1");
 	}
 	@Test(expected = BusinessException.class) 
-	public void MailNull() throws Exception{
+	public void mailNull() throws Exception{
 		Checker.mail(null, 1, 1,"1");
 	}
 	@Test(expected = BusinessException.class) 
-	public void MailFaltaA() throws Exception{
+	public void mailFaltaA() throws Exception{
 		Checker.mail("asda.es", 1, 1,"1");
 	}
 	@Test(expected = BusinessException.class) 
-	public void MailFaltaP() throws Exception{
+	public void mailFaltaP() throws Exception{
 		Checker.mail("as@das", 1, 1,"1");
 	}
 	@Test(expected = BusinessException.class) 
-	public void MailFaltaT() throws Exception{
+	public void mailFaltaT() throws Exception{
 		Checker.mail("asdas", 1, 1,"1");
 	}
 	@Test(expected = BusinessException.class) 
-	public void NationalityNull() throws Exception{
+	public void nationalityNull() throws Exception{
 		Checker.nationality(null, 1, 1,"1");
 	}
 	@Test(expected = BusinessException.class) 
-	public void SurnameNull() throws Exception{
+	public void surnameNull() throws Exception{
 		Checker.surname(null, 1, 1,"1");
 	}
 }

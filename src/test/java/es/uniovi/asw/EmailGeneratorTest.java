@@ -20,14 +20,14 @@ public class EmailGeneratorTest {
 	
 	@Test
 	public void crearPDF() throws Exception {
-		File archivo=EmailGenerator.generate("pdf", c);	
+		File archivo=EmailGenerator.generateF("pdf", c);	
 		assertTrue(archivo.getAbsolutePath().endsWith(".pdf"));
 		assertTrue(archivo.getAbsolutePath().contains("90500084Y"));
 	}
 	
 	@Test
 	public void crearWord() throws Exception {
-		File archivo=EmailGenerator.generate("word", c);	
+		File archivo=EmailGenerator.generateF("word", c);	
 		assertTrue(archivo.getAbsolutePath().endsWith(".docx"));
 		assertTrue(archivo.getAbsolutePath().contains("90500084Y"));
 	}
@@ -35,10 +35,10 @@ public class EmailGeneratorTest {
 	@Test
 	public void elementosErroneos(){
 		//introducir mal el tipo de archivo
-		assertTrue(EmailGenerator.generate("ae", c)==null);
+		assertTrue(EmailGenerator.generateF("ae", c)==null);
 		//introducir un usuario que no existe
-		assertTrue(EmailGenerator.generate("", null)==null);
+		assertTrue(EmailGenerator.generateF("", null)==null);
 		//introducir un usuario sin datos
-		assertTrue(EmailGenerator.generate("", new Citizen())==null);	
+		assertTrue(EmailGenerator.generateF("", new Citizen())==null);	
 	}
 }
