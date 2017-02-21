@@ -32,5 +32,14 @@ public class EmailGeneratorTest {
 		assertTrue(archivo.getAbsolutePath().contains("90500084Y"));
 	}
 	
+	@Test
+	public void elementosErroneos(){
+		//introducir mal el tipo de archivo
+		assertTrue(EmailGenerator.generate("ae", c)==null);
+		//introducir un usuario que no existe
+		assertTrue(EmailGenerator.generate("", null)==null);
+		//introducir un usuario sin datos
+		assertTrue(EmailGenerator.generate("", new Citizen())==null);	}
+	
 
 }
