@@ -2,6 +2,7 @@ package es.uniovi.asw.parser;
 
 import java.util.List;
 
+import es.uniovi.asw.dbupdate.SingletonInsert;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.parser.reader.ParserExcel;
 import es.uniovi.asw.parser.reader.ParserTextPlain;
@@ -24,8 +25,9 @@ public class RList implements ReadList {
 			Console.print("El fichero no tiene un formato correcto");
 		
 		citizens = reader.readFile(path);
-		new InsertR().insert(citizens);
+		SingletonInsert.getInsert().insert(citizens);
 		return citizens;
 	}
 
 }
+

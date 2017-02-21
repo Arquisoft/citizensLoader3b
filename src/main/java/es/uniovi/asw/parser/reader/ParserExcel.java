@@ -49,7 +49,7 @@ public class ParserExcel extends Parser {
 						nationality, dni, username, password);
 				citiziens.add(citizien);
 				
-				Console.println("Se ha añadido a la base de datos a "+citizien.toString());
+				Console.println("Se ha leído de excel a "+citizien.toString());
 				
 				} catch (BusinessException e) {
 					new WreportR().report(e.getMessage());

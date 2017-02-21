@@ -23,7 +23,6 @@ import es.uniovi.asw.model.Citizen;
 
 public class EmailGenerator {
 	
-	
 	public void generate(String formato, List<Citizen> citizens) {
 		for (Citizen c: citizens)
 			generate(formato, c);
@@ -35,7 +34,7 @@ public class EmailGenerator {
 	 * @param usuario, ciudadano para el que se genera dicho documento
 	 * @return documento creado con las especificaciones del usuario / null si no se ha podido crear el formato
 	 */
-	public File generate(String formato,Citizen usuario){
+	public static File generate(String formato,Citizen usuario){
 			if(!(formato.toLowerCase().equals("pdf") || formato.toLowerCase().equals("word"))){
 				System.err.println("El formato elegido para crear el documento no existe.");
 				return null;
@@ -81,7 +80,7 @@ public class EmailGenerator {
 		    	  e.printStackTrace();
 		    	  System.err.println("Error I/O en la generación del documento para el usuario "+usuario.getDNI());
 		      }
-	    	    	File sendword=new File("createdocument."+"docx");
+	    	    	File sendword=new File("EmailGenerados/"+usuario.getDNI()+".docx");
 	    	    	FileOutputStream out;
 					try {
 						out = new FileOutputStream(sendword);
@@ -92,14 +91,15 @@ public class EmailGenerator {
 						e.printStackTrace();
 						System.err.println("Error IO al genetat el docx");
 					}
-					
-					
+		
 		      if(formato.equalsIgnoreCase("word")){
 		    	  return sendword;
 				}
 		      else if(formato.equalsIgnoreCase("pdf")){
 						try {
-							return crearPdf(sendword);
+							File pdf= crearPdf(sendword,usuario.getDNI());
+							sendword.delete();
+							return pdf;
 						} catch (IOException e) {
 							e.printStackTrace();
 							System.err.println("Error IO al genetat el pdf");
@@ -115,9 +115,9 @@ public class EmailGenerator {
 	 * @return file en formato pdf creado
 	 * @throws IOException
 	 */
-	public static File crearPdf(File docx) throws IOException{
+	public static File crearPdf(File docx, String DNI) throws IOException{
 		FileInputStream filew;
-		File pdf=new File("HelloWord.pdf");
+		File pdf=new File("EmailGenerados/"+DNI+".pdf");
 		OutputStream outp = new FileOutputStream(pdf);
 		try {
 			filew = new FileInputStream(docx);
