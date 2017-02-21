@@ -33,7 +33,7 @@ public class EmailGenerator {
 	public static File generate(String formato,Citizen usuario){
 			if(usuario==null || usuario.getNombre()==null || usuario.getApellidos()==null 
 					|| usuario.getDNI()==null || usuario.getEmail()==null){
-				System.err.println("El usuario es null o alguno de los parametros necesarios para realizar esta accion lo es.");
+				System.err.println("El usuario es null o alguno de los parametros necesarios para realizar esta accion lo es. ");
 				return null;
 			}
 			if(!(formato.toLowerCase().equals("pdf") || formato.toLowerCase().equals("word"))){

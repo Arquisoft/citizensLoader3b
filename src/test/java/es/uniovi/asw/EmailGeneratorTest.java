@@ -13,7 +13,7 @@ public class EmailGeneratorTest {
 	Citizen c;
 	
 	@Before
-	public void inizializar(){
+	public void iniziar(){ 
 		c=new Citizen("Juan",  "Torres Pardo", "juan@example.com", new Date(),"C/ Lo que sea",
 				"Rumania", "90500084Y","adada", "12345");
 	}
@@ -39,7 +39,6 @@ public class EmailGeneratorTest {
 		//introducir un usuario que no existe
 		assertTrue(EmailGenerator.generate("", null)==null);
 		//introducir un usuario sin datos
-		assertTrue(EmailGenerator.generate("", new Citizen())==null);	}
-	
-
+		assertTrue(EmailGenerator.generate("", new Citizen())==null);	
+	}
 }
