@@ -7,8 +7,9 @@ import es.uniovi.asw.dbupdate.CommandExecutor;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.BusinessException;
 
-public class InsertR {
+public class InsertR implements Insert {
 	
+	@Override
 	public void insert(List<Citizen> citizens) {
 		CommandExecutor cmd = new CommandExecutor();
 		
