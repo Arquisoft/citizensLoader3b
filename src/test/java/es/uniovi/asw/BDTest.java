@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,9 +24,14 @@ public class BDTest {
 	@Before
 	public void setUp() {
 		try{
+			EntityManager mapper = Jpa.createEntityManager();
+			EntityTransaction trx = mapper.getTransaction();
 			List<Citizen> lista = CitizenFinder.findAll();
-			for(Citizen c:lista)
+			for(Citizen c:lista){
+				trx.begin();
 				Jpa.getManager().remove(c);
+				trx.commit();
+			}
 		}catch(Exception e){
 			
 		}
@@ -65,6 +73,7 @@ public class BDTest {
 		ins.insert(lista);
 		assertEquals(3, CitizenFinder.findAll().size());
 		assertTrue("Seila".equalsIgnoreCase(CitizenFinder.findByDNI("71735747N").getNombre()));
+		
 		
 	}
 
