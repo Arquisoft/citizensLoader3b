@@ -10,7 +10,7 @@ import es.uniovi.asw.model.Citizen;
 
 
 public class EmailGeneratorTest {
-	Citizen c;
+	private Citizen c;
 	
 	@Before
 	public void iniziar(){ 

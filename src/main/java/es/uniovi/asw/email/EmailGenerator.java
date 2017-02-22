@@ -20,6 +20,7 @@ import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 
 import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.util.MD5;
 
 public class EmailGenerator {
 	
@@ -40,7 +41,7 @@ public class EmailGenerator {
 				System.err.println("El usuario es null o alguno de los parametros necesarios para realizar esta accion lo es. ");
 				return null;
 			}
-			if(!(formato.toLowerCase().equals("pdf") || formato.toLowerCase().equals("word"))){
+			if(!(formato.equalsIgnoreCase("pdf") || formato.equalsIgnoreCase("word"))){
 				System.err.println("El formato elegido para crear el documento no existe.");
 				return null;
 			}
@@ -79,12 +80,15 @@ public class EmailGenerator {
 					paragraph.setBorderTop(Borders.BASIC_BLACK_DASHES);
 					run=paragraph.createRun();
 					run.setText("Usuario: "+usuario.getUsuario()+" -------------- "+
-					"Contraseña: "+usuario.getPassword()); //Acordarse de traducir cuando esten las contraseñas cifradas!
+					"Contraseña: "+MD5.desencriptar(usuario.getPassword())); //Acordarse de traducir cuando esten las contraseñas cifradas!
 					//System.out.println("createdocument "+formato+" written successully");
 		      } catch (IOException e) {
 		    	  e.printStackTrace();
 		    	  System.err.println("Error I/O en la generación del documento para el usuario "+usuario.getDNI());
-		      }
+		      } catch (Exception e) {
+				e.printStackTrace();
+				System.err.println("Error al desencriptar la contraseña del usuario "+usuario.getDNI());
+			}
 	    	    	File sendword=new File("EmailGenerados/"+usuario.getDNI()+".docx");
 	    	    	FileOutputStream out;
 					try {

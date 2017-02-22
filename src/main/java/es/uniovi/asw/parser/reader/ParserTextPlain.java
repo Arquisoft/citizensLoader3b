@@ -13,6 +13,7 @@ import es.uniovi.asw.parser.WreportR;
 import es.uniovi.asw.util.Checker;
 import es.uniovi.asw.util.Console;
 import es.uniovi.asw.util.Generator;
+import es.uniovi.asw.util.MD5;
 
 public class ParserTextPlain extends Parser{
 
@@ -43,7 +44,7 @@ public class ParserTextPlain extends Parser{
 	        		dni = Checker.dni(row[6], fila, 7, path);
 	        		
 	        		username = Generator.username(name, mail);
-					password = Generator.password(10,fila*1000);
+					password = MD5.encriptar(Generator.password(10,fila*1000));
 					
 					Citizen c = new Citizen(name, surname, mail, date, address, 
 							nationality, dni, username, password);

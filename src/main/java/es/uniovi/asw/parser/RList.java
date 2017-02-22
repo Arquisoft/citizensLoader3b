@@ -25,8 +25,8 @@ public class RList implements ReadList {
 			Console.print("El fichero no tiene un formato correcto");
 		
 		citizens = reader.readFile(path);
-		SingletonInsert.getInsert().insert(citizens);
-		return citizens;
+		List<Citizen> ciudadanosOk = SingletonInsert.getInsert().insert(citizens);
+		return ciudadanosOk;
 	}
 
 }

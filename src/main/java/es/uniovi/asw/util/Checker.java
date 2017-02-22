@@ -80,9 +80,7 @@ public class Checker {
 	}
 	
 	private static boolean isNull(Object obj) {
-		if (obj == null || obj.toString().equals(""))
-			return true;
-		return false;
+		return (obj == null || obj.toString().equals(""));
 	}
 	
 	private static boolean isAllText(String prueba) {

@@ -16,6 +16,10 @@ public class InsertP implements Insert{
 	
 	private static final WriteReport reporter = new WreportR();
 
+	/**
+	 * Recibe los ciudadanos leídos por el parser. Si hay alguno con dni repetido no se mete.
+	 * Devuelve una lista con los ciudadanos se hayan podido meter en la base de datos.
+	 */
 	@Override
 	public List<Citizen> insert(List<Citizen> citizens) {
 		EntityManager mapper = Jpa.createEntityManager();

@@ -12,7 +12,7 @@ import es.uniovi.asw.model.Citizen;
 
 
 public class CitizenTest {
-	Citizen c;
+	private Citizen c;
 	
 	@Before
 	public void iniziar(){ 

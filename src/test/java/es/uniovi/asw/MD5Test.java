@@ -21,7 +21,7 @@ public class MD5Test {
 
 	@Test
 	public void testDesencriptar() throws Exception {
-		assertEquals(MD5.Desencriptar(encriptada),pass);
+		assertEquals(MD5.desencriptar(encriptada),pass);
 	}
 
 	@Test

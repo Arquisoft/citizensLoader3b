@@ -60,26 +60,26 @@ public class LoadUsers {
 				
 				if(line.hasOption("w")){
 					
-					if(line.getOptionValue("w").toLowerCase().equals("pdf"))
+					if(line.getOptionValue("w").equalsIgnoreCase("pdf"))
 						new EmailGenerator().generate("pdf", citizens);
 					
-					else if (line.getOptionValue("w").toLowerCase().equals("word"))
+					else if (line.getOptionValue("w").equalsIgnoreCase("word"))
 						new EmailGenerator().generate("word", citizens);
 					
 					else 
-						System.out.println("No soportamos ese formato para las cartas");
+						Console.println("No soportamos ese formato para las cartas");
 							
 				}
 				
 			}
 			
 			else if(line.getOptions().length == 0){
-				System.out.println("Utiliza -help para ver la ayuda.");
+				Console.println("Utiliza -help para ver la ayuda.");
 			}
 						
 			Console.println("--- Finalizada la lectura del archivo ---");
 		} catch (UnrecognizedOptionException e) {
-			System.out.println("No se reconoce esa entrada, utliza -help para ver la ayuda.");
+			Console.println("No se reconoce esa entrada, utliza -help para ver la ayuda.");
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
