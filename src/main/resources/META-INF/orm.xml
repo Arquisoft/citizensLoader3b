@@ -10,6 +10,9 @@
 		<query>select c from Citizen c where c.DNI = ?1</query>
 	</named-query>
 
+	<named-query name="Citizen.findAll">
+		<query>select c from Citizen c</query>
+	</named-query>
 
 <!-- 
 	<named-query name="findItemsOnSaleByCategoryId">

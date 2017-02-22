@@ -35,9 +35,11 @@ public class Checker {
 		if (!mail.contains("@"))
 			error(dato,mail+" debe incluir el simbolo '@'",row,column,fichero);
 		
-		String finales = ".es.com.org";
-		if(!finales.contains(mail.split("@")[1].split("\\.")[1]))
-			error(dato,mail+" debe incluir una de estas cadenas despues del '.' -> "+finales,row,column,fichero);
+		//String finales = ".es.com.org";
+		//if(!finales.contains(mail.split("@")[1].split("\\.")[1]))
+		if(!mail.contains(".es")&&!mail.contains(".com")&&!mail.contains(".org"))
+			//error(dato,mail+" debe incluir una de estas cadenas despues del '.' -> ",row,column,fichero);
+			error(dato,mail+" debe terminar en .es, .com o .org",row,column,fichero);
 		
 		return mail;
 	}
