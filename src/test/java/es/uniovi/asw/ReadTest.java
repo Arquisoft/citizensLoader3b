@@ -12,7 +12,7 @@ import es.uniovi.asw.parser.ReadList;
 
 public class ReadTest {
 	
-	//@Test
+	@Test
 	public void readExcelCorrect() throws Exception {
 		ReadList rl = new RList();
 		List<Citizen> citiziens = rl.read("src/test/resources/test.xlsx");
@@ -28,7 +28,7 @@ public class ReadTest {
 		assertEquals(c.getUsuario(), "Juan_juan");
 	}
 	
-	//@Test
+	@Test
 	public void readTextPlainCorrect() throws Exception {
 		ReadList rl = new RList();
 		List<Citizen> citiziens = rl.read("src/test/resources/test.txt");
@@ -57,6 +57,22 @@ public class ReadTest {
 		List<Citizen> citizens = rl.read("src/test/resources/testEmailIncorrect.xlsx");
 		
 		assertEquals(2, citizens.size());
+	}
+	
+	@Test
+	public void readAllIncorrectTxt() {
+		ReadList rl = new RList();
+		List<Citizen> citizens = rl.read("src/test/resources/testAllIncorrect.txt");
+		
+		assertEquals(0, citizens.size());
+	}
+	
+	@Test
+	public void readAllIncorrectExcel() {
+		ReadList rl = new RList();
+		List<Citizen> citizens = rl.read("src/test/resources/testAllIncorrect.xlsx");
+		
+		assertEquals(0, citizens.size());
 	}
 
 }

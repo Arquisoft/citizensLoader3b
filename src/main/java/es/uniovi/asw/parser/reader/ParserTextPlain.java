@@ -66,6 +66,8 @@ public class ParserTextPlain extends Parser{
 	}
 	
 	private Date convertDate(String date) throws ParseException {
+		if (date.isEmpty())
+			return null;
 		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yy");
 		return format.parse(date);
 	}

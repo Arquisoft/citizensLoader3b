@@ -64,7 +64,11 @@ public class ParserExcel extends Parser {
 	}
 	
 	public String getInfo(int pos) {
-		return row.getCell(pos).getStringCellValue();
+		try {
+			return row.getCell(pos).getStringCellValue();
+		} catch (NullPointerException e) {
+			return null;
+		}
 	}
 
 }
