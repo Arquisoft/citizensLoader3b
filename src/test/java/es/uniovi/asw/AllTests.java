@@ -11,6 +11,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	EmailGeneratorTest.class, 
 	MD5Test.class,
 	ReadTest.class,
-	BDTest.class})
+	BDTest.class,
+	LoadUsersTest.class})
 public class AllTests {
 }
