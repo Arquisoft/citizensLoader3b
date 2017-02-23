@@ -4,13 +4,37 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+
+import org.junit.Before;
 import org.junit.Test;
 
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.parser.RList;
 import es.uniovi.asw.parser.ReadList;
+import es.uniovi.asw.util.CitizenFinder;
+import es.uniovi.asw.util.Jpa;
 
 public class ReadTest {
+	
+	@Before
+	public void setUp() {
+		try{
+			EntityManager mapper = Jpa.createEntityManager();
+			EntityTransaction trx = mapper.getTransaction();
+			List<Citizen> lista = CitizenFinder.findAll();
+			for(Citizen c:lista){
+				trx.begin();
+				Jpa.getManager().remove(c);
+				trx.commit();
+			}
+		}catch(Exception e){
+			
+		}
+		
+		
+	}
 	
 	@Test
 	public void readExcelCorrect() throws Exception {
@@ -47,7 +71,7 @@ public class ReadTest {
 	public void readEmailInCorrectTxt() throws Exception {
 		ReadList rl = new RList();
 		List<Citizen> citizens = rl.read("src/test/resources/testEmailIncorrect.txt");
-		assertEquals(0, citizens.size());
+		assertEquals(2, citizens.size());
 		
 	}
 	
@@ -56,7 +80,7 @@ public class ReadTest {
 		ReadList rl = new RList();
 		List<Citizen> citizens = rl.read("src/test/resources/testEmailIncorrect.xlsx");
 		
-		assertEquals(0, citizens.size());
+		assertEquals(2, citizens.size());
 	}
 	
 	@Test

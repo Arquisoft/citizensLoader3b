@@ -20,6 +20,7 @@ import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 
 import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.util.Console;
 import es.uniovi.asw.util.MD5;
 
 public class EmailGenerator {
@@ -38,11 +39,11 @@ public class EmailGenerator {
 	public static File generateF(String formato,Citizen usuario){
 			if(usuario==null || usuario.getNombre()==null || usuario.getApellidos()==null 
 					|| usuario.getDNI()==null || usuario.getEmail()==null){
-				System.err.println("El usuario es null o alguno de los parametros necesarios para realizar esta accion lo es. ");
+				Console.println("El usuario es null o alguno de los parametros necesarios para realizar esta accion lo es. ");
 				return null;
 			}
 			if(!(formato.equalsIgnoreCase("pdf") || formato.equalsIgnoreCase("word"))){
-				System.err.println("El formato elegido para crear el documento no existe.");
+				Console.println("El formato elegido para crear el documento no existe.");
 				return null;
 			}
 		      //Generamos un documento vacío
