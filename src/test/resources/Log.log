@@ -73,3 +73,42 @@
 23/02/2017 09:30:55.556 - [WARNING] - El usuario con DNI 19160962F ya se encontraba en la base de datos.
 23/02/2017 09:30:55.571 - [WARNING] - El usuario con DNI 09940449X ya se encontraba en la base de datos.
 23/02/2017 09:31:16.685 - [WARNING] - Datos incorrectos ---> El nacionalidad Español tiene que ser un todo texto [fila:1 columna:6] de src/test/resources/test.txt
+08/05/2017 03:26:41.579 - [WARNING] - Datos incorrectos ---> El nacionalidad Español tiene que ser un todo texto [fila:1 columna:6] de src/test/resources/test.txt
+08/05/2017 03:26:41.697 - [WARNING] - Datos incorrectos ---> El mail ele_duhotmail.es debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testEmailIncorrect.txt
+08/05/2017 03:26:41.833 - [WARNING] - Datos incorrectos ---> El mail juanexample.com debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testAllIncorrect.xlsx
+08/05/2017 03:26:42.081 - [WARNING] - Datos incorrectos ---> El mail ele_duhotmail.es debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testAllIncorrect.txt
+08/05/2017 03:26:42.212 - [WARNING] - Datos incorrectos ---> El mail juanexample.com debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testEmailIncorrect.xlsx
+08/05/2017 03:27:26.132 - [WARNING] - Datos incorrectos ---> El nacionalidad Español tiene que ser un todo texto [fila:1 columna:6] de src/test/resources/test.txt
+08/05/2017 03:27:26.252 - [WARNING] - Datos incorrectos ---> El mail ele_duhotmail.es debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testEmailIncorrect.txt
+08/05/2017 03:27:26.385 - [WARNING] - Datos incorrectos ---> El mail juanexample.com debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testAllIncorrect.xlsx
+08/05/2017 03:27:26.637 - [WARNING] - Datos incorrectos ---> El mail ele_duhotmail.es debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testAllIncorrect.txt
+08/05/2017 03:27:26.783 - [WARNING] - Datos incorrectos ---> El mail juanexample.com debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testEmailIncorrect.xlsx
+08/05/2017 03:28:34.217 - [WARNING] - Datos incorrectos ---> El nacionalidad Español tiene que ser un todo texto [fila:1 columna:6] de src/test/resources/test.txt
+08/05/2017 03:28:34.341 - [WARNING] - Datos incorrectos ---> El mail ele_duhotmail.es debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testEmailIncorrect.txt
+08/05/2017 03:28:34.487 - [WARNING] - Datos incorrectos ---> El mail juanexample.com debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testAllIncorrect.xlsx
+08/05/2017 03:28:34.760 - [WARNING] - Datos incorrectos ---> El mail ele_duhotmail.es debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testAllIncorrect.txt
+08/05/2017 03:28:34.898 - [WARNING] - Datos incorrectos ---> El mail juanexample.com debe incluir el simbolo '@' [fila:1 columna:3] de src/test/resources/testEmailIncorrect.xlsx
+08/05/2017 03:33:20.465 - [WARNING] - El usuario con DNI 90500084Y ya se encontraba en la base de datos.
+08/05/2017 03:33:20.526 - [WARNING] - El usuario con DNI 19160962F ya se encontraba en la base de datos.
+08/05/2017 03:33:20.585 - [WARNING] - El usuario con DNI 09940449X ya se encontraba en la base de datos.
+08/05/2017 03:33:20.671 - [WARNING] - El usuario con DNI 90500084Y ya se encontraba en la base de datos.
+08/05/2017 03:33:20.732 - [WARNING] - El usuario con DNI 19160962F ya se encontraba en la base de datos.
+08/05/2017 03:33:20.793 - [WARNING] - El usuario con DNI 09940449X ya se encontraba en la base de datos.
+08/05/2017 03:33:20.905 - [WARNING] - El usuario con DNI 90500084Y ya se encontraba en la base de datos.
+08/05/2017 03:33:20.962 - [WARNING] - El usuario con DNI 19160962F ya se encontraba en la base de datos.
+08/05/2017 03:33:21.021 - [WARNING] - El usuario con DNI 09940449X ya se encontraba en la base de datos.
+08/05/2017 03:34:35.360 - [WARNING] - El usuario con DNI 90500084Y ya se encontraba en la base de datos.
+08/05/2017 03:34:35.418 - [WARNING] - El usuario con DNI 19160962F ya se encontraba en la base de datos.
+08/05/2017 03:34:35.474 - [WARNING] - El usuario con DNI 09940449X ya se encontraba en la base de datos.
+08/05/2017 03:34:35.560 - [WARNING] - El usuario con DNI 90500084Y ya se encontraba en la base de datos.
+08/05/2017 03:34:35.614 - [WARNING] - El usuario con DNI 19160962F ya se encontraba en la base de datos.
+08/05/2017 03:34:35.670 - [WARNING] - El usuario con DNI 09940449X ya se encontraba en la base de datos.
+08/05/2017 03:34:35.746 - [WARNING] - El usuario con DNI 90500084Y ya se encontraba en la base de datos.
+08/05/2017 03:34:35.800 - [WARNING] - El usuario con DNI 19160962F ya se encontraba en la base de datos.
+08/05/2017 03:34:35.855 - [WARNING] - El usuario con DNI 09940449X ya se encontraba en la base de datos.
+08/05/2017 03:36:10.037 - [WARNING] - El usuario con DNI 90500084Y ya se encontraba en la base de datos.
+08/05/2017 03:36:10.100 - [WARNING] - El usuario con DNI 19160962F ya se encontraba en la base de datos.
+08/05/2017 03:36:10.159 - [WARNING] - El usuario con DNI 09940449X ya se encontraba en la base de datos.
+08/05/2017 03:36:30.517 - [WARNING] - El usuario con DNI 90500084Y ya se encontraba en la base de datos.
+08/05/2017 03:36:30.584 - [WARNING] - El usuario con DNI 19160962F ya se encontraba en la base de datos.
+08/05/2017 03:36:30.644 - [WARNING] - El usuario con DNI 09940449X ya se encontraba en la base de datos.

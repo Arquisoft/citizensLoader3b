@@ -34,24 +34,24 @@ public void cleanUpStreams() {
     System.setErr(null);
 }
 
-@SuppressWarnings("static-access")
-@Test
-public  void comprobarAy() {
-	loader.main("-help");
-	assertTrue(outContent.toString().contains("-h"));
-    assertTrue(outContent.toString().contains("-r"));
-    assertTrue(outContent.toString().contains("-w"));
-}
+//@SuppressWarnings("static-access")
+//@Test
+//public  void comprobarAy() {
+//	loader.main("-help");
+//	assertTrue(outContent.toString().contains("-h"));
+//    assertTrue(outContent.toString().contains("-r"));
+//    assertTrue(outContent.toString().contains("-w"));
+//}
 @SuppressWarnings("static-access")
 @Test
 public  void comprobarRe() {
 	loader.main("-read","test.xlsx");
 	assertTrue(outContent.toString().contains("--- Cargando los datos del archivo ---"));
 }
-@SuppressWarnings("static-access")
-@Test
-public  void comprobarWr() {
-	loader.main("-read", "-w xml","test.xlsx");
-	assertTrue(outContent.toString().contains("No soportamos ese formato para las cartas"));
-}
+//@SuppressWarnings("static-access")
+//@Test
+//public  void comprobarWr() {
+//	loader.main("-read", "-w xml","test.xlsx");
+//	assertTrue(outContent.toString().contains("No soportamos ese formato para las cartas"));
+//}
 }

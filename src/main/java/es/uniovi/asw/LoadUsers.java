@@ -28,7 +28,7 @@ public class LoadUsers {
 	public static void main(String... args) {
 		final LoadUsers runner = new LoadUsers();
 		Log.config();
-		runner.run(args);
+		runner.run("-read","test.xlsx");
 	}
 
 	private void run(String... args) {

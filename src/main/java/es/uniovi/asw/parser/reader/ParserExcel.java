@@ -14,7 +14,7 @@ import es.uniovi.asw.parser.WreportR;
 import es.uniovi.asw.util.Checker;
 import es.uniovi.asw.util.Console;
 import es.uniovi.asw.util.Generator;
-import es.uniovi.asw.util.MD5;
+
 
 public class ParserExcel extends Parser {
 	private Row row = null;
@@ -44,7 +44,7 @@ public class ParserExcel extends Parser {
 				dni = Checker.dni(getInfo(6),fila,7,path);
 				
 				username = Generator.username(name, mail);
-				password = MD5.encriptar(Generator.password(10,fila*1000));
+				password = Generator.password(10,fila*1000);
 				
 				Citizen citizien = new Citizen(name, surname, mail, date, address, 
 						nationality, dni, username, password);

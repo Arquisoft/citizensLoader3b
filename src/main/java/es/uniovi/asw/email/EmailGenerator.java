@@ -21,7 +21,7 @@ import org.apache.poi.xwpf.usermodel.XWPFRun;
 
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.util.Console;
-import es.uniovi.asw.util.MD5;
+
 
 public class EmailGenerator {
 	
@@ -81,7 +81,7 @@ public class EmailGenerator {
 					paragraph.setBorderTop(Borders.BASIC_BLACK_DASHES);
 					run=paragraph.createRun();
 					run.setText("Usuario: "+usuario.getUsuario()+" -------------- "+
-					"Contraseña: "+MD5.desencriptar(usuario.getPassword())); //Acordarse de traducir cuando esten las contraseñas cifradas!
+					"Contraseña: "+usuario.getPassword()); //Acordarse de traducir cuando esten las contraseñas cifradas!
 					//System.out.println("createdocument "+formato+" written successully");
 		      } catch (IOException e) {
 		    	  e.printStackTrace();
