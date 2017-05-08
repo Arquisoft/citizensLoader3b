@@ -1,31 +1,31 @@
-[EL Fine]: server: 2017-05-08 15:36:27.882--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
-[EL Config]: metadata: 2017-05-08 15:36:28.575--ServerSession(1964319653)--Thread(Thread[main,5,main])--The access type for the persistent class [class es.uniovi.asw.model.Citizen] is set to [FIELD].
-[EL Config]: metadata: 2017-05-08 15:36:28.585--ServerSession(1964319653)--Thread(Thread[main,5,main])--The alias name for the entity class [class es.uniovi.asw.model.Citizen] is being defaulted to: Citizen.
-[EL Config]: metadata: 2017-05-08 15:36:28.598--ServerSession(1964319653)--Thread(Thread[main,5,main])--The column name for element [apellidos] is being defaulted to: APELLIDOS.
-[EL Config]: metadata: 2017-05-08 15:36:28.599--ServerSession(1964319653)--Thread(Thread[main,5,main])--The column name for element [password] is being defaulted to: PASSWORD.
-[EL Config]: metadata: 2017-05-08 15:36:28.599--ServerSession(1964319653)--Thread(Thread[main,5,main])--The column name for element [fechaNacimiento] is being defaulted to: FECHANACIMIENTO.
-[EL Config]: metadata: 2017-05-08 15:36:28.6--ServerSession(1964319653)--Thread(Thread[main,5,main])--The column name for element [direccion] is being defaulted to: DIRECCION.
-[EL Config]: metadata: 2017-05-08 15:36:28.6--ServerSession(1964319653)--Thread(Thread[main,5,main])--The column name for element [usuario] is being defaulted to: USUARIO.
-[EL Config]: metadata: 2017-05-08 15:36:28.6--ServerSession(1964319653)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2017-05-08 15:36:28.601--ServerSession(1964319653)--Thread(Thread[main,5,main])--The column name for element [nombre] is being defaulted to: NOMBRE.
-[EL Config]: metadata: 2017-05-08 15:36:28.601--ServerSession(1964319653)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
-[EL Config]: metadata: 2017-05-08 15:36:28.601--ServerSession(1964319653)--Thread(Thread[main,5,main])--The column name for element [DNI] is being defaulted to: DNI.
-[EL Config]: metadata: 2017-05-08 15:36:28.601--ServerSession(1964319653)--Thread(Thread[main,5,main])--The column name for element [nacionalidad] is being defaulted to: NACIONALIDAD.
-[EL Info]: 2017-05-08 15:36:28.975--ServerSession(1964319653)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.6.4.v20160829-44060b6
-[EL Fine]: connection: 2017-05-08 15:36:29.73--Thread(Thread[main,5,main])--Detected database platform: org.eclipse.persistence.platform.database.MySQLPlatform
-[EL Config]: connection: 2017-05-08 15:36:29.742--ServerSession(1964319653)--Connection(507470099)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+[EL Fine]: server: 2017-05-08 15:41:05.695--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+[EL Config]: metadata: 2017-05-08 15:41:06.043--ServerSession(1000966072)--Thread(Thread[main,5,main])--The access type for the persistent class [class es.uniovi.asw.model.Citizen] is set to [FIELD].
+[EL Config]: metadata: 2017-05-08 15:41:06.052--ServerSession(1000966072)--Thread(Thread[main,5,main])--The alias name for the entity class [class es.uniovi.asw.model.Citizen] is being defaulted to: Citizen.
+[EL Config]: metadata: 2017-05-08 15:41:06.063--ServerSession(1000966072)--Thread(Thread[main,5,main])--The column name for element [apellidos] is being defaulted to: APELLIDOS.
+[EL Config]: metadata: 2017-05-08 15:41:06.064--ServerSession(1000966072)--Thread(Thread[main,5,main])--The column name for element [password] is being defaulted to: PASSWORD.
+[EL Config]: metadata: 2017-05-08 15:41:06.064--ServerSession(1000966072)--Thread(Thread[main,5,main])--The column name for element [fechaNacimiento] is being defaulted to: FECHANACIMIENTO.
+[EL Config]: metadata: 2017-05-08 15:41:06.065--ServerSession(1000966072)--Thread(Thread[main,5,main])--The column name for element [direccion] is being defaulted to: DIRECCION.
+[EL Config]: metadata: 2017-05-08 15:41:06.065--ServerSession(1000966072)--Thread(Thread[main,5,main])--The column name for element [usuario] is being defaulted to: USUARIO.
+[EL Config]: metadata: 2017-05-08 15:41:06.065--ServerSession(1000966072)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2017-05-08 15:41:06.066--ServerSession(1000966072)--Thread(Thread[main,5,main])--The column name for element [nombre] is being defaulted to: NOMBRE.
+[EL Config]: metadata: 2017-05-08 15:41:06.066--ServerSession(1000966072)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2017-05-08 15:41:06.066--ServerSession(1000966072)--Thread(Thread[main,5,main])--The column name for element [DNI] is being defaulted to: DNI.
+[EL Config]: metadata: 2017-05-08 15:41:06.066--ServerSession(1000966072)--Thread(Thread[main,5,main])--The column name for element [nacionalidad] is being defaulted to: NACIONALIDAD.
+[EL Info]: 2017-05-08 15:41:06.635--ServerSession(1000966072)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.6.4.v20160829-44060b6
+[EL Fine]: connection: 2017-05-08 15:41:07.223--Thread(Thread[main,5,main])--Detected database platform: org.eclipse.persistence.platform.database.MySQLPlatform
+[EL Config]: connection: 2017-05-08 15:41:07.23--ServerSession(1000966072)--Connection(1267140426)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
 	platform=>MySQLPlatform
 	user name=> "sql8173240"
 	datasource URL=> "jdbc:mysql://sql8.freesqldatabase.com:3306/sql8173240"
 ))
-[EL Config]: connection: 2017-05-08 15:36:30.292--ServerSession(1964319653)--Connection(291543498)--Thread(Thread[main,5,main])--Connected: jdbc:mysql://sql8.freesqldatabase.com:3306/sql8173240
+[EL Config]: connection: 2017-05-08 15:41:07.779--ServerSession(1000966072)--Connection(1528756911)--Thread(Thread[main,5,main])--Connected: jdbc:mysql://sql8.freesqldatabase.com:3306/sql8173240
 	User: sql8173240@cm-93-156-216-75.telecable.es
 	Database: MySQL  Version: 5.5.49-0ubuntu0.14.04.1
 	Driver: MySQL Connector Java  Version: mysql-connector-java-6.0.5 ( Revision: 6e477e32dff18fb4dc102e53f5a68037a9f8762e )
-[EL Info]: connection: 2017-05-08 15:36:30.394--ServerSession(1964319653)--Thread(Thread[main,5,main])--/file:/C:/Users/Seila/Desktop/ASW/citizensLoader3b/target/classes/_citizens login successful
-[EL Fine]: sql: 2017-05-08 15:36:30.436--ServerSession(1964319653)--Connection(291543498)--Thread(Thread[main,5,main])--SELECT ID, DNI, APELLIDOS, DIRECCION, EMAIL, FECHANACIMIENTO, NACIONALIDAD, NOMBRE, PASSWORD, USUARIO FROM TCITIZENS WHERE (DNI = ?)
+[EL Info]: connection: 2017-05-08 15:41:07.842--ServerSession(1000966072)--Thread(Thread[main,5,main])--/file:/C:/Users/Seila/Desktop/ASW/citizensLoader3b/target/classes/_citizens login successful
+[EL Fine]: sql: 2017-05-08 15:41:07.867--ServerSession(1000966072)--Connection(1528756911)--Thread(Thread[main,5,main])--SELECT ID, DNI, APELLIDOS, DIRECCION, EMAIL, FECHANACIMIENTO, NACIONALIDAD, NOMBRE, PASSWORD, USUARIO FROM TCITIZENS WHERE (DNI = ?)
 	bind => [90500084Y]
-[EL Fine]: sql: 2017-05-08 15:36:30.52--ServerSession(1964319653)--Connection(291543498)--Thread(Thread[main,5,main])--SELECT ID, DNI, APELLIDOS, DIRECCION, EMAIL, FECHANACIMIENTO, NACIONALIDAD, NOMBRE, PASSWORD, USUARIO FROM TCITIZENS WHERE (DNI = ?)
+[EL Fine]: sql: 2017-05-08 15:41:07.945--ServerSession(1000966072)--Connection(1528756911)--Thread(Thread[main,5,main])--SELECT ID, DNI, APELLIDOS, DIRECCION, EMAIL, FECHANACIMIENTO, NACIONALIDAD, NOMBRE, PASSWORD, USUARIO FROM TCITIZENS WHERE (DNI = ?)
 	bind => [19160962F]
-[EL Fine]: sql: 2017-05-08 15:36:30.584--ServerSession(1964319653)--Connection(291543498)--Thread(Thread[main,5,main])--SELECT ID, DNI, APELLIDOS, DIRECCION, EMAIL, FECHANACIMIENTO, NACIONALIDAD, NOMBRE, PASSWORD, USUARIO FROM TCITIZENS WHERE (DNI = ?)
+[EL Fine]: sql: 2017-05-08 15:41:08.006--ServerSession(1000966072)--Connection(1528756911)--Thread(Thread[main,5,main])--SELECT ID, DNI, APELLIDOS, DIRECCION, EMAIL, FECHANACIMIENTO, NACIONALIDAD, NOMBRE, PASSWORD, USUARIO FROM TCITIZENS WHERE (DNI = ?)
 	bind => [09940449X]
